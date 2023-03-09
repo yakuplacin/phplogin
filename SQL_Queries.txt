@@ -1,0 +1,22 @@
+// for the creating accounts table
+CREATE TABLE IF NOT EXISTS `accounts` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+  	`username` varchar(50) NOT NULL,
+  	`password` varchar(255) NOT NULL,
+  	`email` varchar(100) NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+//For the login
+SELECT id, password FROM accounts WHERE username = ?
+
+//For the registering
+SELECT id, password FROM accounts WHERE username = ? //for checking if it exists
+INSERT INTO accounts (username, password, email) VALUES (?, ?, ?) // preparing for the insertion to accounts table
+
+
+//for the profile page
+SELECT password, email FROM accounts WHERE id = ? //for getting results from the database
+
+//For the home page
+SELECT * FROM accounts // for getting all accounts and show it to the user. I would put it on admin account but I wanted to put it on all accounts.
